@@ -1,6 +1,16 @@
 import { useState, useEffect } from "react";
 import type { Movie } from "../types/movie";
 
+interface TVMazeShow {
+  id: number;
+  name: string;
+  image?: { medium?: string; original?: string };
+  rating?: { average?: number };
+  genres?: string[];
+  summary?: string;
+  premiered?: string;
+}
+
 /**
  * 🪄 HOOK CAJA NEGRA:
  * No necesitas modificar este archivo.
@@ -14,14 +24,14 @@ export function useMovies() {
   useEffect(() => {
     fetch("https://api.tvmaze.com/shows")
       .then((res) => res.json())
-      .then((data: any[]) => {
+      .then((data: TVMazeShow[]) => {
         const formatted: Movie[] = data.slice(0, 36).map((show) => ({
           id: show.id,
           title: show.name,
           poster:
             show.image?.medium ||
             show.image?.original ||
-            "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=500&auto=format&fit=crop&q=60",
+            "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba",
           rating: show.rating?.average || null,
           genres: show.genres || [],
           summary: show.summary
