@@ -8,12 +8,11 @@ import { WatchlistPage } from "./pages/WatchlistPage";
 // ============================================================================
 // TODO:
 // 1. Importar el WatchlistProvider:
-// import { WatchlistProvider } from "./context/WatchlistProvider";
 // 2. Envolver todo el contenido (<BrowserRouter>...) dentro de <WatchlistProvider>...</WatchlistProvider>
 
 export default function App() {
   return (
-    // 👇 Envolver aquí con <WatchlistProvider> 👇
+    //  Envolver aca con <WatchlistProvider>
     <BrowserRouter>
       <div className="min-h-screen bg-slate-950 text-slate-100">
         <Navbar />
@@ -23,6 +22,6 @@ export default function App() {
         </Routes>
       </div>
     </BrowserRouter>
-    // 👆 Cerrar </WatchlistProvider> 👆
+    //  Cerrar </WatchlistProvider>
   );
 }

@@ -14,9 +14,7 @@ interface MovieCardProps {
 export function MovieCard({ movie }: MovieCardProps) {
   // TODO:
   // 2. Ejecutar useWatchlist() para obtener isInWatchlist y toggleWatchlist:
-  // const { isInWatchlist, toggleWatchlist } = useWatchlist();
-  // 3. Comprobar si esta película específica está guardada:
-  // const inWatchlist = isInWatchlist(movie.id);
+  // 3. Comprobar si esta película específica está guardada: usar la funcion inWatchList del contexto y pasarle movie.id
 
   const inWatchlist = false; // 👈 Reemplazar con el valor real usando isInWatchlist(movie.id)
 
@@ -29,7 +27,7 @@ export function MovieCard({ movie }: MovieCardProps) {
       }`}
     >
       {/* Poster */}
-      <div className="relative aspect-[2/3] w-full overflow-hidden bg-slate-950">
+      <div className="relative aspect-2/3 w-full overflow-hidden bg-slate-950">
         <img
           src={movie.poster}
           alt={movie.title}

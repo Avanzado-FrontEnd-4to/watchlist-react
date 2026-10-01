@@ -16,7 +16,7 @@ export function WatchlistProvider({ children }: { children: ReactNode }) {
   // 2. Si no existe, agregarlo al final del array.
   // (Pista: miren cómo usamos setCapturedIds y filter en el ejemplo de Pokémon)
   const toggleWatchlist = (id: number) => {
-    // 👇 TU CÓDIGO AQUÍ 👇
+    //  TU CÓDIGO aca
     console.log("toggleWatchlist con ID:", id);
     setWatchlistIds((prev) => prev); // Temporal para que TypeScript no se queje
   };
@@ -27,7 +27,7 @@ export function WatchlistProvider({ children }: { children: ReactNode }) {
   // TODO: Retornar true si 'id' está presente en 'watchlistIds', false si no lo está.
   // (Pista: método includes())
   const isInWatchlist = (id: number): boolean => {
-    // 👇 TU CÓDIGO AQUÍ 👇
+    //  TU CÓDIGO aca
     console.log("isInWatchlist con ID:", id);
     return false; // Reemplazar este return temporal
   };
@@ -37,7 +37,7 @@ export function WatchlistProvider({ children }: { children: ReactNode }) {
   // ============================================================================
   // TODO: Resetear el estado 'watchlistIds' a un array vacío [].
   const clearWatchlist = () => {
-    // 👇 TU CÓDIGO AQUÍ 👇
+    //  TU CÓDIGO aca
     setWatchlistIds([]);
   };
 
