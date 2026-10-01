@@ -1,13 +1,21 @@
 import { Link, useLocation } from "react-router-dom";
-// TODO: Importar useWatchlist para mostrar el contador real
-import { useWatchlist } from "../hooks/useWatchlist";
+
+// ============================================================================
+// 📝 PASO 11: Mostrar el contador de la Watchlist en la barra superior
+// ============================================================================
+// TODO:
+// 1. Importar el hook useWatchlist:
+// import { useWatchlist } from "../hooks/useWatchlist";
 
 export function Navbar() {
   const location = useLocation();
 
-  // TODO: Obtener watchlistIds desde useWatchlist()
-  const { watchlistIds } = useWatchlist();
-  const count = watchlistIds.length;
+  // TODO:
+  // 2. Obtener 'watchlistIds' desde useWatchlist():
+  // const { watchlistIds } = useWatchlist();
+  // const count = watchlistIds.length;
+
+  const count = 0; // 👈 Reemplazar con watchlistIds.length
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">

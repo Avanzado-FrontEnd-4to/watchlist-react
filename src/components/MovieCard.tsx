@@ -1,17 +1,24 @@
 import type { Movie } from "../types/movie";
-// TODO: Importar useWatchlist desde "../hooks/useWatchlist"
-import { useWatchlist } from "../hooks/useWatchlist";
+
+// ============================================================================
+// 📝 PASO 10: Conectar la tarjeta con el estado global
+// ============================================================================
+// TODO:
+// 1. Importar el hook useWatchlist:
+// import { useWatchlist } from "../hooks/useWatchlist";
 
 interface MovieCardProps {
   movie: Movie;
 }
 
 export function MovieCard({ movie }: MovieCardProps) {
-  // TODO: Conectar con useWatchlist()
-  // 1. Obtener isInWatchlist y toggleWatchlist desde useWatchlist()
-  // 2. Usar isInWatchlist(movie.id) para saber si está guardada
-  const { isInWatchlist, toggleWatchlist } = useWatchlist();
-  const inWatchlist = isInWatchlist(movie.id);
+  // TODO:
+  // 2. Ejecutar useWatchlist() para obtener isInWatchlist y toggleWatchlist:
+  // const { isInWatchlist, toggleWatchlist } = useWatchlist();
+  // 3. Comprobar si esta película específica está guardada:
+  // const inWatchlist = isInWatchlist(movie.id);
+
+  const inWatchlist = false; // 👈 Reemplazar con el valor real usando isInWatchlist(movie.id)
 
   return (
     <div
@@ -66,7 +73,12 @@ export function MovieCard({ movie }: MovieCardProps) {
         {/* Action Button */}
         <div className="mt-auto pt-4">
           <button
-            onClick={() => toggleWatchlist(movie.id)}
+            // TODO:
+            // 4. Conectar el evento onClick para alternar la película en la watchlist:
+            // onClick={() => toggleWatchlist(movie.id)}
+            onClick={() => {
+              console.log("Hiciste click en la película con ID:", movie.id);
+            }}
             className={`w-full py-2.5 px-3 rounded-xl border text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer active:scale-[0.98] ${
               inWatchlist
                 ? "bg-rose-500/20 text-rose-300 border-rose-500/40 hover:bg-rose-500/30"

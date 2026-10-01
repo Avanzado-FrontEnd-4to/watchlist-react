@@ -2,32 +2,51 @@ import { useState, type ReactNode } from "react";
 import { WatchlistContext } from "./WatchlistContext";
 
 export function WatchlistProvider({ children }: { children: ReactNode }) {
-  // TODO 1: Declarar el estado 'watchlistIds' usando useState<number[]> inicializado en []
+  // ============================================================================
+  // 📝 PASO 3: Estado de la Watchlist
+  // ============================================================================
+  // TODO: Declarar un estado 'watchlistIds' de tipo number[] inicializado como array vacío [].
   const [watchlistIds, setWatchlistIds] = useState<number[]>([]);
 
-  // TODO 2: Completar la función toggleWatchlist(id)
-  // - Si el id ya está en watchlistIds -> quitarlo del array (filtrar)
-  // - Si no está -> agregarlo al array
-  // (Pista: pueden guiarse de cómo hicimos toggleCapture en el ejemplo de Pokémon)
+  // ============================================================================
+  // 📝 PASO 4: Alternar película en la Watchlist (Agregar / Quitar)
+  // ============================================================================
+  // TODO: Completar la lógica de toggleWatchlist(id):
+  // 1. Si el 'id' ya existe en 'watchlistIds', filtrarlo para removerlo del array.
+  // 2. Si no existe, agregarlo al final del array.
+  // (Pista: miren cómo usamos setCapturedIds y filter en el ejemplo de Pokémon)
   const toggleWatchlist = (id: number) => {
-    setWatchlistIds((prev) => {
-      if (prev.includes(id)) {
-        return prev.filter((item) => item !== id);
-      }
-      return [...prev, id];
-    });
+    // 👇 TU CÓDIGO AQUÍ 👇
+    console.log("toggleWatchlist con ID:", id);
+    setWatchlistIds((prev) => prev); // Temporal para que TypeScript no se queje
   };
 
-  // TODO 3: Completar la función isInWatchlist(id)
-  // - Debe retornar true si el id ya está en watchlistIds, o false si no
-  const isInWatchlist = (id: number) => watchlistIds.includes(id);
+  // ============================================================================
+  // 📝 PASO 5: Saber si una película está guardada
+  // ============================================================================
+  // TODO: Retornar true si 'id' está presente en 'watchlistIds', false si no lo está.
+  // (Pista: método includes())
+  const isInWatchlist = (id: number): boolean => {
+    // 👇 TU CÓDIGO AQUÍ 👇
+    console.log("isInWatchlist con ID:", id);
+    return false; // Reemplazar este return temporal
+  };
 
-  // TODO 4: Completar la función clearWatchlist()
-  // - Debe vaciar el array watchlistIds dejándolo en []
-  const clearWatchlist = () => setWatchlistIds([]);
+  // ============================================================================
+  // 📝 PASO 6: Vaciar la Watchlist
+  // ============================================================================
+  // TODO: Resetear el estado 'watchlistIds' a un array vacío [].
+  const clearWatchlist = () => {
+    // 👇 TU CÓDIGO AQUÍ 👇
+    setWatchlistIds([]);
+  };
 
   return (
-    // TODO 5: Proveer los valores a los componentes hijos a través de WatchlistContext.Provider
+    // ============================================================================
+    // 📝 PASO 7: Proveer el contexto a los componentes hijos
+    // ============================================================================
+    // TODO: Pasar en el prop 'value' un objeto con:
+    // { watchlistIds, toggleWatchlist, isInWatchlist, clearWatchlist }
     <WatchlistContext.Provider
       value={{ watchlistIds, toggleWatchlist, isInWatchlist, clearWatchlist }}
     >

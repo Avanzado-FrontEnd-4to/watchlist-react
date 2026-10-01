@@ -1,7 +1,9 @@
 import { createContext } from "react";
 
-// 📝 Interfaz del Contexto:
-// Define qué datos y qué funciones estarán disponibles en toda la app.
+// ============================================================================
+// 📝 PASO 1: Contrato del Contexto (TypeScript)
+// ============================================================================
+// Define la forma de los datos y funciones que estarán disponibles en toda la app.
 export interface WatchlistContextType {
   watchlistIds: number[];
   toggleWatchlist: (id: number) => void;
@@ -9,6 +11,9 @@ export interface WatchlistContextType {
   clearWatchlist: () => void;
 }
 
-// TODO: Crear y exportar el WatchlistContext usando createContext con valor inicial null
-// Ejemplo: export const WatchlistContext = createContext<WatchlistContextType | null>(null);
+// ============================================================================
+// 📝 PASO 2: Crear el Contexto
+// ============================================================================
+// TODO: Crear y exportar 'WatchlistContext' usando createContext con valor inicial null.
+// Tipado: createContext<WatchlistContextType | null>(null)
 export const WatchlistContext = createContext<WatchlistContextType | null>(null);

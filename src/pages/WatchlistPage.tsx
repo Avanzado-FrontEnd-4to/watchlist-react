@@ -1,14 +1,23 @@
 import { Link } from "react-router-dom";
 import { useMovies } from "../hooks/useMovies";
 import { MovieCard } from "../components/MovieCard";
-// TODO: Importar useWatchlist para obtener watchlistIds y clearWatchlist
-import { useWatchlist } from "../hooks/useWatchlist";
+
+// ============================================================================
+// 📝 PASO 12: Conectar la página de la Watchlist
+// ============================================================================
+// TODO:
+// 1. Importar useWatchlist:
+// import { useWatchlist } from "../hooks/useWatchlist";
 
 export function WatchlistPage() {
   const { movies, loading } = useMovies();
 
-  // TODO: Obtener watchlistIds y clearWatchlist desde useWatchlist()
-  const { watchlistIds, clearWatchlist } = useWatchlist();
+  // TODO:
+  // 2. Obtener watchlistIds y clearWatchlist desde useWatchlist():
+  // const { watchlistIds, clearWatchlist } = useWatchlist();
+
+  const watchlistIds: number[] = []; // 👈 Reemplazar con el estado real
+  const clearWatchlist = () => {};   // 👈 Reemplazar con la función real
 
   // Filtramos las películas que están en la watchlist
   const savedMovies = movies.filter((m) => watchlistIds.includes(m.id));
