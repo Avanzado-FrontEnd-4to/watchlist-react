@@ -5,7 +5,7 @@
 ---
 
 ## 🎯 Objetivo de la actividad
-En esta actividad vas a dotar de reactividad y estado global a una aplicación de películas (**CineVault**). 
+El objetivo de esta actividad es aprender a darle un estado global a una aplicación de películas. 
 
 Toda la interfaz gráfica, el ruteo y el consumo de la API de **TVMaze** ya están resueltos. Tu misión es implementar el **Contexto de Watchlist** para que los usuarios puedan guardar películas, ver la cantidad en la barra de navegación y gestionarlas en la vista de Watchlist.
 
